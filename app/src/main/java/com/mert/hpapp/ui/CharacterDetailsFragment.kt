@@ -1,4 +1,4 @@
-package com.mert.hpapp
+package com.mert.hpapp.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import com.mert.hpapp.MainActivityViewModel
+import com.mert.hpapp.R
 import com.mert.hpapp.util.Constants
 import com.mert.hpapp.util.GlideImageLoader
 import kotlinx.android.synthetic.main.fragment_character_details.*
@@ -40,13 +40,14 @@ class CharacterDetailsFragment(private val mainViewModel: MainActivityViewModel)
 
         if (selectedCharHP != null) {
             Log.d(TAG, selectedCharHP.name)
+
             character_name.text = selectedCharHP.name
             character_gender.text = "Gender: ${selectedCharHP.gender.replaceFirstChar { it.uppercase() }}"
             character_house.text = "House: ${selectedCharHP.house}"
             character_birthdate.text = "Birth Date ${selectedCharHP.dateOfBirth}"
             character_ancestry.text = "Ancestry: ${selectedCharHP.ancestry.replaceFirstChar { it.uppercase() }}"
-            character_eye_color.text = "Eye colour: ${selectedCharHP.eyeColour.replaceFirstChar { it.uppercase() }}"
-            character_hair_color.text = "Hair colur: ${selectedCharHP.hairColour.replaceFirstChar { it.uppercase() }}"
+            character_eye_color.text = "Eye Colour: ${selectedCharHP.eyeColour.replaceFirstChar { it.uppercase() }}"
+            character_hair_color.text = "Hair Colour: ${selectedCharHP.hairColour.replaceFirstChar { it.uppercase() }}"
 
             val profilePic = char_detailed_pp
 
@@ -59,9 +60,8 @@ class CharacterDetailsFragment(private val mainViewModel: MainActivityViewModel)
 
         }
         else {
-            Log.d(TAG, "Null")
+            Log.d(TAG, "Selected characterHP is null")
         }
-
 
     }
 }

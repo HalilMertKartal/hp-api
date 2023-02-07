@@ -1,14 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CharacterDetailsFragment">
+    android:background="@color/whitish"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
+        android:id="@+id/char_detailed_pp"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/character_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="Harry Potter"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/character_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="Gender: Male"
+            />
+        <TextView
+            android:id="@+id/character_house"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="House: Targaryen"
+            />
+        <TextView
+            android:id="@+id/character_birthdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="Date of Birth: 01.01.2000"
+            />
+        <TextView
+            android:id="@+id/character_ancestry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="Ancestry: Something"
+            />
+        <TextView
+            android:id="@+id/character_eye_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="Eye Color: Hazel"
+            />
+        <TextView
+            android:id="@+id/character_hair_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="16sp"
+            android:text="Hair Color: Black"
+            />
 
-</FrameLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

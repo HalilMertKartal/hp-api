@@ -1,4 +1,4 @@
-package com.mert.hpapp
+package com.mert.hpapp.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -10,8 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.mert.hpapp.MainActivityViewModel
+import com.mert.hpapp.R
 import com.mert.hpapp.mainRecyclerView.MainRVAdapter
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_characters.*
 
 
@@ -20,11 +21,6 @@ import kotlinx.android.synthetic.main.fragment_characters.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CharactersFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CharactersFragment : Fragment() {
     private var TAG = "CharactersFragment"
     lateinit var mainViewModel: MainActivityViewModel
@@ -52,25 +48,6 @@ class CharactersFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_characters, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment characters_fragment.
-         */
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CharactersFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 
     private fun initViewModel() {
         mainViewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]

@@ -12,6 +12,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainActivityViewModel: ViewModel() {
     var charHPList: MutableLiveData<ArrayList<CharHP>> = MutableLiveData()
+    val selectedCharHP: MutableLiveData<CharHP> = MutableLiveData()
 
     // Create the retrofit instance and do the subscriptions
     fun callApi() {
