@@ -28,6 +28,32 @@ class MainActivityViewModel: ViewModel() {
         return charHPList
     }
 
+    fun validateCharHPList(
+        charHPList: ArrayList<CharHP>?
+    ): Boolean {
+        if (charHPList == null) {
+            return false
+        }
+
+        if (charHPList.isEmpty()) {
+            return false
+        }
+        return true
+    }
+
+    fun validateSelectedCharHP(
+        selectedCharHP: CharHP?,
+        charHPList: ArrayList<CharHP>
+    ): Boolean {
+        if (selectedCharHP == null) {
+            return false
+        }
+        if (!charHPList.contains(selectedCharHP)) {
+            return false
+        }
+        return true
+    }
+
     // Set the observer for character list
     private fun charListObserver(): Observer<ArrayList<CharHP>>{
         return object: Observer<ArrayList<CharHP>> {
